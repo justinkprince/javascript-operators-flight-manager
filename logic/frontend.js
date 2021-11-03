@@ -7,12 +7,18 @@ function onCalculateNumberOfFlights() {
     let passengers = document.getElementById('passengers').value;
     let capacity = document.getElementById('capacity').value;
     try {
-       let flights = Flights().calculateNumberOfFlights(passengers, capacity);
-       document.getElementById('flights').innerHTML = "You will need " + flights +
-          " flight(s) to carry " + passengers + " passengers";
+      let flights = Flights().calculateNumberOfFlights(passengers, capacity);
+      document.getElementById("flights").innerHTML =
+        "You will need " +
+        flights +
+        " flight(s) to carry " +
+        passengers +
+        " passengers";
     } catch (error) {
-        document.getElementById('flights').innerHTML = error; 
-    } 
+      document.getElementById("flights").innerHTML = error;
+    } finally {
+      console.log(passengers, capacity);
+    }
 }
 
 function onCalculateTotalFinalPrice(object) {
